@@ -1,0 +1,6 @@
+C:\umarket\umarket.node\obj\Debug\umarket.node.njsprojResolveAssemblyReference.cache
+C:\umarket\umarket.node\bin\Microsoft.NodejsTools.WebRole.dll
+C:\github\umarket.node\umarket.node\obj\Debug\umarket.node.njsprojResolveAssemblyReference.cache
+C:\github\umarket.node\umarket.node\bin\Microsoft.NodejsTools.WebRole.dll
+C:\afriknet\umarket.node\bin\Microsoft.NodejsTools.WebRole.dll
+C:\afriknet\umarket.node\obj\Debug\umarket.node.njsprojResolveAssemblyReference.cache
