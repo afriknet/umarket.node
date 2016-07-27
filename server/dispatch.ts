@@ -46,9 +46,7 @@ export function process(req: Express.Request, res: Express.Response) {
             break;
         case 'aws':
         case 'amazon':
-
-            // test
-
+            
             aws_client[info.fn].apply(aws_client, params)
                 .then(rslt => {
                     process_response(null, rslt, res);
