@@ -7,15 +7,26 @@ import Express = require('express');
 
 var Schema = require('schema-client');
 var amazon = require('amazon-product-api');
+var sails = require('sails');
 
 
 var sch_client = new Schema.Client('afriknetmarket', 'WRvloJ7OlLsNCAjPFfp1wJcRwyNU5pQ2');
 
+var a_id = sails.config.a1.id_1
+    + sails.config.a2.id_2
+    + sails.config.a3.id_3;
+
+var key = sails.config.a1.key_1
+    + sails.config.a2.key_2
+    + sails.config.a3.key_3;
+
+
+
 var aws_client = amazon.createClient({
-  awsId: 'AKIAJ56TP7JGYQHLA5IA',
-  awsSecret: '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',
-  awsTag: 'afrikne-21',
-  domain: 'webservices.amazon.fr',
+  awsId: a_id, 
+  awsSecret: key,
+  awsTag: sails.config.backend.aws.tag, 
+  domain: 'webservices.amazon.fr'
 });
 
 

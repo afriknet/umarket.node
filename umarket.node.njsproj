@@ -46,6 +46,10 @@
     <Compile Include="api\responses\serverError.js" />
     <Compile Include="app.js" />
     <Compile Include="assets\js\dependencies\sails.io.js" />
+    <Compile Include="config\a1.js" />
+    <Compile Include="config\a2.js" />
+    <Compile Include="config\a3.js" />
+    <Compile Include="config\backends.js" />
     <Compile Include="config\blueprints.js" />
     <Compile Include="config\bootstrap.js" />
     <Compile Include="config\connections.js" />
