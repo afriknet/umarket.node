@@ -37,6 +37,8 @@ interface CallInfo {
 }
 
 
+var d = 0;
+
 
 export function process(req: Express.Request, res: Express.Response) {
 
