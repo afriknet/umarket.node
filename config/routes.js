@@ -47,5 +47,8 @@ module.exports.routes = {
   ***************************************************************************/
 
   'get /api': 'DispatchController.dispatch',
-  'post /api': 'DispatchController.dispatch'
+  'post /api': 'DispatchController.dispatch',
+
+  'get /api/upload-file/:product_id': 'DispatchController.upload_file',
+  'post /api/upload-file/:product_id': 'DispatchController.upload_file',
 };

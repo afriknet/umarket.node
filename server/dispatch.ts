@@ -8,6 +8,9 @@ import Express = require('express');
 var Schema = require('schema-client');
 var amazon = require('amazon-product-api');
 var sails = require('sails');
+import path = require('path');
+var root = require('root-path');
+var base64 = require('base64-img');
 
 
 var sch_client = new Schema.Client('afriknetmarket', 'WRvloJ7OlLsNCAjPFfp1wJcRwyNU5pQ2');
@@ -67,10 +70,58 @@ export function process(req: Express.Request, res: Express.Response) {
                     process_response(err, null, res);
                 });
 
-            break;
+            break;            
     }
 
 }
+
+
+
+export function upload_file(req: Express.Request, res: Express.Response) {
+
+    var options = {
+        dirname: root('/assets/images'),
+        saveAs: (__newFileStream, cb) => {
+            cb(null, path.basename(__newFileStream.filename));
+        }
+    };
+    
+
+    (req as any)['file']('file').upload(options, function (err, files:any[]) {
+
+        if (err) {
+            console.log('error');
+        }
+        else {
+            console.log(files);
+        }
+
+        var path = files[0].fd;
+
+        base64.base64(path, (err, data) => {
+
+            var product_id = req.params['product_id'];
+
+            var params = '/products/' + product_id + '/images?file[data][$binary]=' + data;
+
+            sch_client['post'](params, (err, result) => {
+
+
+            });
+
+            /*
+
+            sch_client[info.fn].apply(sch_client, params);
+
+            POST /products/<id>/images?file[data][$binary]=<base64 encoded image data>&caption=<optional caption>
+            */
+
+        });
+
+        res.send(files[0]);
+    });
+}
+
 
 
 

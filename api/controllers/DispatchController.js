@@ -12,7 +12,10 @@ module.exports = {
     
     dispatch: function (req, res) {
         dispatcher.process(req, res);
-    }
+    },
 
+    upload_file: function (req, res){
+        dispatcher.upload_file(req, res);
+    }
 };
 
